@@ -19,9 +19,13 @@ gem 'devise'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+
+
 end
 
 group :development, :test do
+
+  gem 'rails_12factor'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
