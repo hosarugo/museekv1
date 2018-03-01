@@ -17,6 +17,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 
+gem 'devise-i18n' #HR - change lanuguage
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 
