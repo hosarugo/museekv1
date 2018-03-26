@@ -1,4 +1,107 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="row">
+
+  <div class="col-md-3">
+
+   <ul class="sidebar-list">
+
+    <li class="sidebar-item">
+
+     <%= link_to 'Modifier mon profil', edit_user_registration_path, class: 'sidebar-link active' %>
+
+   </li>
+
+ </ul>
+
+ <br>
+
+ <%= link_to 'Voir mon profil', user_path(current_user.id), class: 'btn btn-default wide' %>
+
+</div>
+
+<div class="ui-block-content">
+
+
+<div class="col-md-7  text-center">
+
+
+ <div class="panel panel-default">
+
+   <div class="panel-heading">Mon profil</div>
+
+   <div class="panel-body">
+
+    <div class="container">
+
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render 'shared/devise_errors' %>
+
+      <div class="form-inputs">
+        <%= f.input :fullname, required: true, autofocus: true, label: false, placeholder: "Nom complet (prénom + nom)" %>
+
+        <%= f.input :email, required: true, autofocus: true, label: false, disabled: true  %>
+
+        <%= f.input :address, required: false, autofocus: true, label: false, placeholder: "Adresse"%>
+
+        <div class="row">
+          <div class="col-md-4">
+            <span class="btn btn-default btn-file">
+              Upload photo
+              <%= f.input :avatar, label: false,  as: :file %>
+            </span>
+          </div>
+        </div>
+        <br />
+
+              <!-- <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+              <% end %> -->
+              <%= f.input :phone_number, required: false,  label: false, placeholder: "Numéro de téléphone" %>
+              <%= f.input :description, rows:5, col:25, label: false, placeholder: "Ma description" %>
+
+              <%= f.input :password, autocomplete: "off", required: false, label: false, placeholder: "Nouveau mot de passe" %>
+              <%= f.input :password_confirmation, required: false, label: false, placeholder: "confirmation du mot de passe" %>
+
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit, "Enregistrer", class: "btn btn-primary", label: false %>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+        <div class="panel-footer">
+
+          <div class="container">
+
+
+            <%= link_to "Annuler", :back %>
+            <br />
+
+
+            <p> <%= link_to "Effacer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class = "col-md-2">
+    <div class="content">
+  <%=image_tag "singer2.png", :size => "300x180"%>
+</div>
+</div>
+</div>
+
+
+
+
+
+<!-- <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -25,3 +128,4 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+ -->

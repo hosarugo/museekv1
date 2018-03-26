@@ -18,19 +18,27 @@ gem 'webpacker'
 gem 'devise'
 
 gem 'devise-i18n' #HR - change lanuguage
+gem 'paperclip'
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'rails_12factor'
+  gem 'spring'
 
 
 end
 
 group :development, :test do
 
-  gem 'rails_12factor'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :production do
+  gem 'rails_12factor'
+
 end
