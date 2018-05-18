@@ -7,39 +7,52 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.4'
 gem 'redis'
+gem 'devise'
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3'
-gem 'font-awesome-sass', '~> 4.7'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'devise'
-
-gem 'devise-i18n' #HR - change lanuguage
+gem 'turbolinks'
+gem 'devise-i18n'
 gem 'paperclip'
+gem 'toastr-rails'
+gem 'rails-i18n'
 gem 'geocoder'
+gem 'bootstrap'
+gem 'ransack'
+gem 'rails-timeago'
+gem 'gmaps-autocomplete-rails'
+
+gem 'activeadmin'
+gem 'active_admin_theme'
+
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'rails_12factor'
-  gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 
-
+  gem 'faker'
+  gem 'letter_opener'
 end
 
 group :development, :test do
-
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'sqlite3'
 end
 
 group :production do
   gem 'rails_12factor'
-
 end
-

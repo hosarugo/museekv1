@@ -1,0 +1,9 @@
+@media all and (max-width: 8000px) and (min-width: 800px) {
+  /* put your mobile css in here */
+
+    .sticky {
+            position: -webkit-sticky; /* Safari */
+          position: sticky;
+          top: 140px;
+    }
+}

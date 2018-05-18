@@ -13,3 +13,33 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+
+
+ .text-line-through {
+      text-decoration: line-through
+ }
+
+
+
+
+
+@media screen and (max-width: 1041px) {
+    //nim  -> not in mobile
+    .nim {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1041px) {
+    //iim  -> is in mobile
+    .iim {
+        display: none;
+    }
+}
+
+

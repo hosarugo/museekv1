@@ -1,0 +1,50 @@
+
+.avatar-small {
+
+
+          /* make a square container */
+    width: 28px;
+    height: 28px;
+
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: top center;
+
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 50%;
+
+
+ }
+
+
+.avatar-medium {
+
+      width: 35px;
+
+ }
+
+.avatar-large {
+
+      width: 68px;
+
+ }
+
+ .avatar-full {
+
+
+
+          /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: top center;
+
+     width: 100%;
+      height: auto;
+      border-radius: 6px;
+
+
+
+ }

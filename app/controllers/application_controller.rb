@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   protected
   def configure_permitted_parameters # RH - ici les actions sont inscription (:sign_up) et mise à jour du profil (:account_update). En gros, vous avez autorisé le champ fullname à l'inscription et lors de la modification du profil.
       devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:full_name])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:full_name, :avatar, :phone_number, :about, :email, :password, :password_confirmation, :address])
   end
 end
