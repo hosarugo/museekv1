@@ -25,13 +25,13 @@
 <div class="col-md-7 text-center">
 
 
- <div class="panel panel-body">
+ <div class="panel panel-default">
 
    <div class="panel-heading">Mon profil</div>
 
    <div class="panel-body">
 
-    <div class="container">
+    <div class="row">
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render 'shared/devise_errors' %>
@@ -64,10 +64,7 @@
 
             </div>
 
-            <div class="form-actions">
-              <%= f.button :submit, "Enregistrer", class: "btn btn-primary", label: false %>
-              <% end %>
-            </div>
+
 
           </div>
         </div>
@@ -76,20 +73,17 @@
 
 
         <div class="panel-footer">
-
-
-
-
-            <%= link_to "Annuler", :back %>
-            <br />
-
-
-            <p> <%= link_to "Effacer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+          <div class="form-actions">
+            <%= f.button :submit, "Enregistrer", class: "btn btn-primary", label: false, data: {disable_with:"<i class='fa fa-spinner fa-spin'></i> En cours..." } %>
+            <% end %>
+          </div>
 
         </div>
+          <%= link_to "Annuler", :back %>
+          <br/>
+          <p> <%= link_to "Effacer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
       </div>
     </div>
-
   </div>
 </div>
 

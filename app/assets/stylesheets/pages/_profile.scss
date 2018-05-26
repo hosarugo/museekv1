@@ -4,6 +4,63 @@
     .sticky {
             position: -webkit-sticky; /* Safari */
           position: sticky;
-          top: 140px;
+          top: 145px;
     }
 }
+
+.well {
+
+  background-color: white;
+  border: red
+}
+
+.well:hover {
+
+  background-color: white;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+
+}
+
+.accordion {
+    background-color: white;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.active, .accordion:hover {
+    background-color: white;
+    // color: red;
+    border-radius: 6px;
+    text-decoration: underline;
+
+}
+
+.accordion:after {
+    content: '\002B';
+    color: red;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel-accordion {
+    padding: 0 18px;
+    border-radius: 6px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    // box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+
+}
+
