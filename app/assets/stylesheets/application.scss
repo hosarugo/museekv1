@@ -8,6 +8,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "toastr";
 
 // Your CSS partials
 @import "layouts/index";
@@ -15,14 +16,8 @@
 @import "pages/index";
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #FFFAFA;
+    // font-family: 'Roboto', sans-serif;
 }
-
-
- .text-line-through {
-      text-decoration: line-through
- }
 
 
 

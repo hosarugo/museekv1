@@ -4,9 +4,10 @@
 
 .click {
   color: blue;
+  text-decoration: underline;
 }
 
 .click:hover {
   // color: red;
-  text-decoration: underline;
+  font-weight: bold;
 }
