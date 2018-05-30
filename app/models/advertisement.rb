@@ -1,6 +1,7 @@
-class Advertisment < ApplicationRecord
-  belongs_to :user
+class Advertisement < ApplicationRecord
 
+  belongs_to :user
+  has_many :photos
 
 
   validates :main_category, presence: true
@@ -18,7 +19,7 @@ class Advertisment < ApplicationRecord
   validates :price, numericality: { only_integer: true, greater_than: 5 }
 
 
-  geocoded_by :address
-  after_validation :geocode, if: :address_changed?
+  # geocoded_by :address
+  # after_validation :geocode, if: :address_changed?
 
 end

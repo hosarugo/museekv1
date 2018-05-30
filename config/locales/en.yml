@@ -29,5 +29,26 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+fr:
+  activerecord:
+    errors:
+      models:
+        advertisement:
+          attributes:
+            main_category:
+            category:
+            listing_name:
+            title:
+            description:
+            address:
+            price:
+    attributes:
+        advertisement:
+            main_category: "catégorie principale"
+            category: "catégorie"
+            listing_name: "nom listé"
+            title: "titre"
+            description: "description"
+            address: "adresse"
+            price: "prix"
+

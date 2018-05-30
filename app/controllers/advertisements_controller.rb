@@ -6,7 +6,7 @@ class AdvertisementsController < ApplicationController
 
 
   def index
-    @advertisements = current_user.rooms
+    @advertisements = current_user.advertisements
   end
 
   def new
@@ -26,7 +26,7 @@ class AdvertisementsController < ApplicationController
 
       @photos = @advertisement.photos
 
-      redirect_to advertisement_path(@advertisement), notice:"Votre annonce a été ajoutée avec succès"
+      redirect_to advertisement_path(@advertisement), notice:"Your advertisement is online. Congratulations!"
 
     else
 
@@ -83,7 +83,7 @@ def set_advertisement
 end
 
 def advertisement_params
-  params.require(:advertisement).permit(:listing_name, :summary, :address, :price,
+  params.require(:advertisement).permit(:main_category, :category, :title, :listing_name, :description, :address, :price,
    :active)
 
 end

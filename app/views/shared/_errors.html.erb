@@ -1,8 +1,8 @@
-<% unless @room.errors.empty? %>
+<% unless @advertisement.errors.empty? %>
 
  <script type="text/javascript">
 
-     <% @room.errors.full_messages.each do |msg| %>
+     <% @advertisement.errors.full_messages.each do |msg| %>
 
                toastr.error('<%= msg %>')
 

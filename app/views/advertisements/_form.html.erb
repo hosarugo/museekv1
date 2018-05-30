@@ -1,0 +1,107 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Vendez votre instrument
+  </div>
+  <div class="panel-body">
+    <div class="container">
+
+      <%= simple_form_for @advertisement, html: {multipart: true} do |f| %>
+
+      <%= render 'shared/errors' %>
+      <div class="row">
+
+        <div class="col-md-4 select">
+          <div class="form-inputs">
+            <%= f.input :main_category, collection: [["Guitar","Guitar"], ["Piano","Piano"],
+            ["Bass", "Bass"]],label_method: :first, value_method: :second, id: "main_category",
+            prompt: "Pick an instrument", class: "form-control", label: "Instruments" %>
+          </div>
+        </div>
+
+
+        <div class="col-md-4 select">
+          <div class="form-inputs">
+            <%= f.input :category, collection: [["Rock","Rock"], ["Jazz","Jazz"],
+            ["Funk","Funk"]],label_method: :first, value_method: :second, id: "category",
+            prompt: "Choose a music style", class: "form-control", label: "category" %>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-md-12 select">
+          <div class="form-inputs">
+            <%= f.input :listing_name, placeholder: "Instrument model", label: "Give the model and year"%>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 select">
+          <div class="form-inputs">
+            <%= f.input :title, placeholder: "Catchy title", label: "Some words to blabla"%>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 select">
+          <div class="form-inputs">
+            <%= f.input :description, rows:4, placeholder: "More informations about the instrument", label: "Description" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 select">
+          <%= f.input :address, placeholder: "Where is your instrument?", class: "form-control", label: "Address" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <span class="btn btn-default btn-file">
+              <i class= "fas fa-cloud"></i> Load your insturment pictures !
+              <%= file_field_tag "images[]", type: :file, multiple: true %>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div id="photos"><%= render 'photos/list' %></div>
+
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label>The price</label>
+            <div class="input-group">
+              <%= f.input :price, placeholder: "ex: 45€", class: "form-control", label: false%>
+              <div class="input-group-addon">€</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="form-group">
+            <%= f.check_box :active %> Advertisement activated
+          </div>
+
+          <div class="actions">
+            <%= f.button :submit, "Validate your advertisement", class: "btn btn-primary"%>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+</div>
