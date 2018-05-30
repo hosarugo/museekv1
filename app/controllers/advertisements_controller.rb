@@ -14,7 +14,7 @@ class AdvertisementsController < ApplicationController
   end
 
   def create
-    @advertisement = current_user.advertisements.build(room_params)
+    @advertisement = current_user.advertisements.build(advertisement_params)
 
     if @advertisement.save
 
