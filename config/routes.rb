@@ -9,12 +9,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  get '/preload' => 'reservations#preload'
-  get '/preview' => 'reservations#preview'
-  get '/your_trips', to: 'reservations#your_trips'
-  get '/your_reservations' => 'reservations#your_reservations'
+  resources :advertisements
 
-  get '/search' => 'pages#search'
+  # get '/preload' => 'reservations#preload'
+  # get '/preview' => 'reservations#preview'
+  # get '/your_trips', to: 'reservations#your_trips'
+  # get '/your_reservations' => 'reservations#your_reservations'
+
+  # get '/search' => 'pages#search'
 
 
 

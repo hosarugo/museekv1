@@ -1,0 +1,98 @@
+class AdvertisementsController < ApplicationController
+
+  before_action :set_advertisement, only: [:show, :edit, :update]
+  before_action :authenticate_user!, except: [:show]
+  before_action :require_same_user, only: [:edit, :update]
+
+
+  def index
+    @advertisements = current_user.rooms
+  end
+
+  def new
+    @advertisement = current_user.advertisements.build
+  end
+
+  def create
+    @advertisement = current_user.advertisements.build(room_params)
+
+    if @advertisement.save
+
+      if params[:images]
+        params[:images].each do |i|
+          @advertisement.photos.create(image: i)
+        end
+      end
+
+      @photos = @advertisement.photos
+
+      redirect_to advertisement_path(@advertisement), notice:"Votre annonce a été ajoutée avec succès"
+
+    else
+
+     render :new
+
+   end
+ end
+
+def show
+  @photos = @advertisement.photos
+
+  # @reviews = @advertisement.reviews
+
+    # if current_user
+
+    #     @booked = Reservation.where("advertisement_id = ? AND user_id = ?", @advertisement.id, current_user.id).present?
+
+    #     #@hasReview = @reviews.find_by(user_id: current_user.id)
+
+    # end
+  end
+
+def edit
+
+  @photos = @advertisement.photos
+end
+
+def update
+ if @advertisement.update(room_params)
+
+  if params[:images]
+    params[:images].each do |i|
+      @advertisement.photos.create(image: i)
+  end
+end
+
+  redirect_to advertisement_path(@room), notice:"Modification enregistrée..."
+
+else
+
+ render :edit
+
+  end
+
+end
+
+
+
+
+private
+
+def set_advertisement
+  @advertisement = Advertisement.find(params[:id])
+end
+
+def advertisement_params
+  params.require(:advertisement).permit(:listing_name, :summary, :address, :price,
+   :active)
+
+end
+
+def require_same_user
+    if current_user.id != @advertisement.user_id
+      flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
+      redirect_to root_path
+    end
+end
+
+end
