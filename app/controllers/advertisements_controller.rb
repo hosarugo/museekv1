@@ -55,7 +55,7 @@ def edit
 end
 
 def update
- if @advertisement.update(room_params)
+ if @advertisement.update(advertisement_params)
 
   if params[:images]
     params[:images].each do |i|
@@ -63,7 +63,7 @@ def update
   end
 end
 
-  redirect_to advertisement_path(@room), notice:"Modification enregistrée..."
+  redirect_to advertisement_path(@advertisement), notice:"Update saved..."
 
 else
 
@@ -90,7 +90,7 @@ end
 
 def require_same_user
     if current_user.id != @advertisement.user_id
-      flash[:danger] = "Vous n'avez pas le droit de modifier cette page"
+      flash[:danger] = "You can not modify this page!"
       redirect_to root_path
     end
 end

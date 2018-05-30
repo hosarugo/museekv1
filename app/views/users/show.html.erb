@@ -9,57 +9,57 @@
 
       <% if current_user != @user %>
 
-        <div class="row-space-2">
+      <div class="row-space-2">
 
-         <%= link_to "Envoyer un message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-primary wide" %>
+       <%= link_to "Envoyer un message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-primary wide" %>
 
-        </div>
+     </div>
 
-      <% end %>
+     <% end %>
 
-      <div class="panel panel-default">
-          <div class="name text-center"><%= @user.full_name %></div>
+     <div class="panel panel-default">
+      <div class="name text-center"><%= @user.full_name %></div>
 
-        <button class="accordion">
-          <div class="text click">Contact</div>
-        </button>
+      <button class="accordion">
+        <div class="text click">Contact</div>
+      </button>
 
-        <div class="panel-accordion">
+      <div class="panel-accordion">
 
-         Email: <p><%= @user.email %></p><br>
+       Email: <p><%= @user.email %></p><br>
 
-         Tél: <p><%= @user.phone_number %></p>
+       Tél: <p><%= @user.phone_number %></p>
 
-        </div>
+     </div>
 
-        <!--######## ouverture de l'accordion JS-->
-        <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
+     <!--######## ouverture de l'accordion JS-->
+     <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-        </script>
-        <!--######## ACCORDION -->
-
-      </div>
-
-    </div>
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
+    <!--######## ACCORDION -->
 
   </div>
 
+</div>
+
+</div>
+
 
 <div class="col-md-6">
-   <div class="panel-defautl">
+ <div class="panel-defautl">
 
   <h3>Something about <%= @user.full_name %></h3>
 
@@ -73,40 +73,40 @@
 
 
 
-  </div>
-    <div class="col-md-3 sticky">
+</div>
+<div class="col-md-3 sticky">
 
-    <div class="well text-center">
+  <div class="well text-center">
 
-      <%= image_tag avatar_url(@user), class: "img-circle avatar-large"  %>
+    <%= image_tag avatar_url(@user), class: "img-circle avatar-large"  %>
 
-      <% if current_user != @user %>
+    <% if current_user != @user %>
 
-        <div class="row-space-2">
+    <div class="row-space-2">
 
-         <%= link_to "Envoyer un message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-primary wide" %>
+     <%= link_to "Envoyer un message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-primary wide" %>
 
-        </div>
+   </div>
 
-      <% end %>
+   <% end %>
 
-      <div class="panel panel-default">
+   <div class="panel panel-default">
 
-        <div class="panel-heading">Données de <%= @user.full_name %></div>
+    <div class="panel-heading">Données de <%= @user.full_name %></div>
 
-        <div class="panel-body">
+    <div class="panel-body">
 
-         Email: <p><%= @user.email %></p><br>
+     Email: <p><%= @user.email %></p><br>
 
-         Tél: <p><%= @user.phone_number %></p>
+     Tél: <p><%= @user.phone_number %></p>
 
-        </div>
+   </div>
 
-      </div>
+ </div>
 
-    </div>
+</div>
 
-  </div>
+</div>
 </div>
 
 

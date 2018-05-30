@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="wrap">
+
+   <!-- Carousel -->
+   <div class="row">
+    <div class="col-md-6 ">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <% if @photos %>
+        <% @photos.each do |photo| %>
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="<%= photo.id %>" class="active"></li>
+        </ol>
+        <% end %>
+        <% end %>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <% if @photos %>
+          <% @photos.each do |photo| %>
+          <div class="item <%= 'active' if photo.id == @photos[0].id %>">
+            <%= image_tag photo.image.url() %>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Précédent</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Suivant</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h2><%= @advertisement.listing_name.upcase %></h2>
+      <%= @advertisement.address %>
+
+    </div>
+  </div>
+
+  <br>
+  <!-- Informations principales -->
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-3 text-center">
+          <%= image_tag avatar_url(@advertisement.user), class:"img-circle avatar-large" %>
+          <br>
+          <br>
+          <%= @advertisement.user.full_name %>
+        </div>
+
+        <div class="col-md-9">
+          <div class="row text-center">
+            <div class="col-sm-3">
+              <%= @advertisement.main_category %>
+            </div>
+            <div class="col-sm-3">
+              <%= @advertisement.category %>
+            </div>
+            <div class="col-sm-3">
+              <%= @advertisement.title %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h3>Description of the instrument</h3>
+        <p><%= @advertisement.description %></p>
+      </div>
+    </div>
+
+
+
+  </div>
+
+</div>
+</div>
+</div>

@@ -306,7 +306,7 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   binding_of_caller
-  bootstrap (~> 4.1.1)
+  bootstrap
   bootstrap-sass
   devise
   devise-i18n
