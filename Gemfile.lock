@@ -326,7 +326,7 @@ DEPENDENCIES
   jquery-ui-rails
   letter_opener
   paperclip
-  pg (~> 0.21)
+  pg
   pry-byebug
   pry-rails
   puma
