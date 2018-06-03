@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.1'
+ruby '2.4.4'
 
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
@@ -35,6 +35,9 @@ gem 'gmaps-autocomplete-rails'
 gem 'activeadmin'
 gem 'active_admin_theme'
 
+
+gem 'tzinfo-data'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 
 group :development do
