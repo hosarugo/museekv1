@@ -43,15 +43,17 @@
 
     </div>
 
-    <!--FAVORIABLE-->
-    <div class="wrap>
+    <!--FAVORIABLE TTOOOOOO FFFIIIIXXXX-->
+
+          <div class="wrap">
             <% if  current_user.favorites.where("favoritable_id = ?", @advertisement).count == 0 %>
 
-            <a rel="nofollow" data-method="post" href="/advertisments/<%= @advertisement.id %>/favorite"  ><div class="favourite-icon" ></div></a>
+            <a rel="nofollow" data-method="post" href="/advertisements/<%= @advertisement.id %>/favorite"  ><div class="favorite-icon" ></div></a>
             <% else %>
-            <a rel="nofollow" data-method="delete" href="/advertisements/<%= @advertisement.id %>/unfavorite"><div class="favourite-icon-active" ></div></a>
+            <a rel="nofollow" data-method="delete" href="/advertisements/<%= @advertisement.id %>/unfavorite"><div class="favorite-icon-active" ></div></a>
             <% end %>
-          </div>
+
+
   </div>
 
   <br>

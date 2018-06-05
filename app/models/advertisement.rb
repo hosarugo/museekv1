@@ -3,6 +3,7 @@ class Advertisement < ApplicationRecord
   belongs_to :user
   has_many :photos
 
+  acts_as_favoritable
 
   validates :main_category, presence: true
 
