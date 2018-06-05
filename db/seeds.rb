@@ -83,3 +83,11 @@ user =  User.create({
     })
 # user.avatar_url = "https://scontent.flis5-1.fna.fbcdn.net/v/t31.0-8/20626573_10155773499743109_2156786739631634358_o.jpg?oh=4b1096754adf1a110a54e2a30feaa41d&oe=5A9C5189"
 user.save
+
+
+message = Message.create({
+  content: "labalbalbalablablabalbalablab",
+  user_id: 1,
+  })
+
+message.save
