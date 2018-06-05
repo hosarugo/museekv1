@@ -1,8 +1,22 @@
 class AdvertisementsController < ApplicationController
 
-  before_action :set_advertisement, only: [:show, :edit, :update]
+  before_action :set_advertisement, only: [:show, :edit, :update, :destroy, :favorited, :unfavorite ]
   before_action :authenticate_user!, except: [:show]
   before_action :require_same_user, only: [:edit, :update]
+
+
+
+
+# def favorited
+#   current_user.favorite @advertisement
+#   redirect_to advertisement_path(@advertisement.id)
+# end
+
+# def unfavorite
+#   current_user.favorites.where('favoritable_id = ? ', @advertisement.id).delete_all
+#   redirect_to advertisement_path(@advertisement.id)
+# end
+
 
 
   def index
