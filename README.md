@@ -1,1 +1,8 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+//Update gems
+bundle install
+
+//Create seeds
+rake db:drop db:create db:migrate db:seed
+
+//Run the app
+rails s
