@@ -7,15 +7,15 @@ class AdvertisementsController < ApplicationController
 
 
 
-# def favorited
-#   current_user.favorite @advertisement
-#   redirect_to advertisement_path(@advertisement.id)
-# end
+def favorited
+  current_user.favorite @advertisement
+  redirect_to advertisement_path(@advertisement.id)
+end
 
-# def unfavorite
-#   current_user.favorites.where('favoritable_id = ? ', @advertisement.id).delete_all
-#   redirect_to advertisement_path(@advertisement.id)
-# end
+def unfavorite
+  current_user.favorites.where('favoritable_id = ? ', @advertisement.id).delete_all
+  redirect_to advertisement_path(@advertisement.id)
+end
 
 
 
