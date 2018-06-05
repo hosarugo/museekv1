@@ -52,6 +52,7 @@ def show
 def edit
 
   @photos = @advertisement.photos
+
 end
 
 def update
