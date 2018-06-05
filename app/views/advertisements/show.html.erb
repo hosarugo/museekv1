@@ -80,40 +80,7 @@
       </div>
     </div>
 
-         <!-- Google maps -->
-          <div class="row">
-              <div class="col-md-8">
-                  <div id="map"></div>
 
-                  <style>
-                     #map {
-                      height: 400px;
-                      width: 100%;
-                     }
-                  </style>
-
-                  <script>
-                    function initMap() {
-                      var uluru = {lat: <%= @advertisement.latitude %>, lng: <%= @advertisement.longitude %>};
-                      var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 13,
-                        center: uluru
-                      });
-                      var marker = new google.maps.Marker({
-                        position: uluru,
-                        map: map
-                      });
-                    }
-                  </script>
-                  <script async defer
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu1O0zXXjzWUoBZgEYi5knaC1gmpu531E&callback=initMap">
-                  </script>
-              </div>
-          </div>
-
-
-
-  </div>
 
   <!-- Google maps -->
         <div class="row">
@@ -146,7 +113,23 @@
             </div>
         </div>
 
-
+        <!-- Advertisements nearby-->
+        <h3>Advertisements around you</h3>
+        <div class="row">
+            <% for advertisement in @advertisement.nearbys(10).limit(2) %>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading preview">
+                        <%= image_tag advertisement.photos[0].image.url(:medium) if advertisement.photos.length > 0 %>
+                    </div>
+                    <div class="panel-body">
+                        <%= link_to advertisement.listing_name, advertisement %><br>
+                        (à <%= (advertisement.distance*1.6).round(2) %> km)
+                    </div>
+                </div>
+            </div>
+            <% end %>
+        </div>
 
 </div>
 </div>
