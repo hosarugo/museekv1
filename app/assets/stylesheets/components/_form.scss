@@ -3,6 +3,7 @@
   border-color: white;
   padding: 15px;
 
+
 }
 
 
@@ -101,3 +102,21 @@ input[type="checkbox"]:checked:before {
  color: #ff5a5f;
 
  }
+
+
+ // for picture preview in add edit
+ .panel-heading.preview {
+
+         padding: 0;
+
+ }
+
+
+.panel-heading.preview img{
+
+          width: 100%;
+
+ }
+
+
+

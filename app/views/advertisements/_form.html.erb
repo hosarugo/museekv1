@@ -3,14 +3,13 @@
     Vendez votre instrument
   </div>
   <div class="panel-body">
-    <div class="container">
 
       <%= simple_form_for @advertisement, html: {multipart: true} do |f| %>
 
       <%= render 'shared/errors' %>
       <div class="row">
 
-        <div class="col-md-4 select">
+        <div class="col-md-6 select">
           <div class="form-inputs">
             <%= f.input :main_category, collection: [["Guitar","Guitar"], ["Piano","Piano"],
             ["Bass", "Bass"]],label_method: :first, value_method: :second, id: "main_category",
@@ -19,7 +18,7 @@
         </div>
 
 
-        <div class="col-md-4 select">
+        <div class="col-md-6 select">
           <div class="form-inputs">
             <%= f.input :category, collection: [["Rock","Rock"], ["Jazz","Jazz"],
             ["Funk","Funk"]],label_method: :first, value_method: :second, id: "category",
@@ -103,5 +102,4 @@
 
     </div>
   </div>
-</div>
 </div>
