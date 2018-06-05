@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :add_column_to_users
   devise_for :users,
                :path => '',
                :path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'}, #HR - Define new routes
