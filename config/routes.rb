@@ -13,10 +13,12 @@ Rails.application.routes.draw do
 
   resources :photos
 
+  resources :conversations, only: [:index, :create] do
+       resources :messages, only: [:index, :create]
+  end
 
 
   get '/search' => 'pages#search'
-
   # get '/preload' => 'reservations#preload'
   # get '/preview' => 'reservations#preview'
   # get '/your_trips', to: 'reservations#your_trips'

@@ -99,9 +99,15 @@
 
     <div class="panel-body">
 
-     Email: <p><%= @user.email %></p><br>
+     <% if current_user != @user %>
 
-     Tél: <p><%= @user.phone_number %></p>
+     <div class="row-space-2">
+
+         <%= link_to "Send a message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-primary wide" %>
+
+     </div>
+
+ <% end %>
 
    </div>
 
