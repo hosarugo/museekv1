@@ -1,0 +1,53 @@
+
+
+<div class="col-md-7 text-center">
+
+ <div class="panel panel-default">
+
+   <div class="panel-heading">Tell us a bit more about you!</div>
+
+   <div class="panel-body">
+
+    <div class="row">
+
+      <%= simple_form_for(resource, as: resource_name, url: update_user_registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render 'shared/devise_errors' %>
+
+        <div class="form-inputs">
+          <%= f.input :instrument1, required: false, autofocus: true, label: false, placeholder: "Your main instrument" %>
+
+          <%= f.input :instrument2, required: false, autofocus: true, label: false, placeholder: "add an instrument" %>
+
+          <%= f.input :instrument3, required: false, autofocus: true, label: false, placeholder: "add an instrument" %>
+
+          <%= f.input :instrument4, required: false, autofocus: true, label: false, placeholder: "add an instrument" %>
+
+          <%= f.input :instrument5, required: false, autofocus: true, label: false, placeholder: "add an instrument" %>
+
+          <%= f.input :style1, required: false, autofocus: true, label: false, placeholder: "add a style" %>
+
+          <%= f.input :style2, required: false, autofocus: true, label: false, placeholder: "add a style" %>
+
+          <%= f.input :style3, required: false, autofocus: true, label: false, placeholder: "add astyle" %>
+
+
+          <%= f.input :address, required: false, autofocus: true, label: false, placeholder: "Adresse"%>
+
+        <div class="panel-footer">
+          <div class="form-actions">
+            <%= f.button :submit, "Ready to find your instrument", class: "btn btn-primary", label: false, data: {disable_with:"<i class='fa fa-spinner fa-spin'></i> Saving..." } %>
+            <% end %>
+          </div>
+
+        </div>
+          <br />
+
+                <!-- <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
