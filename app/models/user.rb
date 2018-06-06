@@ -11,6 +11,15 @@ class User < ApplicationRecord
 
   validates :full_name, presence: false, length: {maximum: 65} #HR - Require a full field for the fullname
 
+  validates :instrument1, presence: false
+  validates :instrument2, presence: false
+  validates :instrument3, presence: false
+  validates :instrument4, presence: false
+  validates :instrument5, presence: false
+  validates :style1, presence: false
+  validates :style2, presence: false
+  validates :style3, presence: false
+
 
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" },

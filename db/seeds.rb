@@ -48,7 +48,18 @@ user =  User.create({
     full_name: "Hugo Rosa",
     first_name: "Hugo",
     last_name: "Rosa",
-    about: "I am a musician and i love to play with people!",
+    about: "Grand Barrosa
+​
+or when folk music meets the soul
+Born by the sea , this Lusitanian grew up with a rich musical culture. Grand started playing music at the age of 7 years . Since the music is all that the world means for him . A mixture of feelings , love and 'saudade' .
+
+
+
+After trying many musical styles, Grand perfected his singing and discovers that more than instruments , his voice can carry and felt in others what he feels. Grand crossed South America with his guitar, before crossing Canada on foot and always with his guitar on the back. His music is halfway between melancholy and sensual folk .
+
+
+
+Be swept away by the world of Grand Barrosa",
     instrument1: "Guitar",
     instrument2: "Guitar",
     instrument3: "Guitar",

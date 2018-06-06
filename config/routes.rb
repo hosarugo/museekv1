@@ -18,11 +18,19 @@ Rails.application.routes.draw do
   end
 
 
+
+
   get '/search' => 'pages#search'
-  # get '/preload' => 'reservations#preload'
-  # get '/preview' => 'reservations#preview'
-  # get '/your_trips', to: 'reservations#your_trips'
-  # get '/your_reservations' => 'reservations#your_reservations'
+
+  get 'users/favorites'
+
+  post '/advertisements/:id/favorite',to: "advertisements#favorited"
+
+  delete '/advertisements/:id/unfavorite', to: "advertisements#unfavorite"
+
+
+  get '/users/:id/favourites', to: "users#favourite"
+
 
 
 
