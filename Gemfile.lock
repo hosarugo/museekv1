@@ -343,7 +343,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.7)
   cloudinary (= 1.1.7)
   devise
   devise-i18n
@@ -367,7 +367,7 @@ DEPENDENCIES
   rails_12factor
   ransack
   redis
-  sass-rails
+  sass-rails (>= 3.2)
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
