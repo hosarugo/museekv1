@@ -1,2 +1,2 @@
-import "bootstrap";
-import "jquery-ujs";
+//= require jquery
+//= require bootstrap-sprockets

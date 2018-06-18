@@ -1,122 +1,85 @@
 
-<div class="row">
-
-  <div class="col-md-3 sticky">
-
-    <div class="panel-default text-center">
-
-      <%= image_tag avatar_url(@user), class: "img-circle avatar-large"  %>
-
-
-     <div class="panel panel-default">
-      <div class="name text-center"><%= @user.full_name %></div>
-
-      <button class="accordion">
-        <div class="text click">Contact</div>
-      </button>
-
-      <div class="panel-accordion">
-
-       Email: <p><%= @user.email %></p><br>
-
-       Tél: <p><%= @user.phone_number %></p>
-
-     </div>
-
-     <!--######## ouverture de l'accordion JS-->
-     <script>
-      var acc = document.getElementsByClassName("accordion");
-      var i;
-
-      for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var panel = this.nextElementSibling;
-          if (panel.style.display === "block") {
-            panel.style.display = "none";
-          } else {
-            panel.style.display = "block";
-          }
-        });
-      }
-    </script>
-    <!--######## ACCORDION -->
-
-  </div>
-
-  <div class="panel-default">
-<h4>My ads (<%= @advertisements.length %>)</h4><br>
-        <div class="row">
-            <% @advertisements.each do |advertisement| %>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading preview">
-                        <%= image_tag advertisement.photos[0].image.url(:medium) if advertisement.photos.length > 0 %>
-                    </div>
-                    <div class="panel-body">
-                        <%= link_to advertisement.listing_name, advertisement %>
-                    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel-default text-center">
+        <%= image_tag avatar_url(@user), class: "img-circle avatar-large"  %>
+        <div class="panel panel-default">
+          <div class="name text-center"><%= @user.full_name %></div>
+            <div class="panel-body">
+              <% if current_user != @user %>
+                <div class="row-space-2">
+                  <%= link_to "Send a message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-primary wide" %>
                 </div>
+              <% end %>
             </div>
-            <% end %>
+
+            <button class="accordion">
+              <div class="text click">Contact</div>
+            </button>
+
+            <div class="panel-accordion">
+              Email: <p><%= @user.email %></p>
+                <br>
+              Tél: <p><%= @user.phone_number %></p>
+            </div>
+
+            <!--######## ouverture de l'accordion JS-->
+            <script>
+              var acc = document.getElementsByClassName("accordion");
+              var i;
+
+              for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                  this.classList.toggle("active");
+                  var panel = this.nextElementSibling;
+                  if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                  } else {
+                    panel.style.display = "block";
+                  }
+                });
+              }
+            </script>
+            <!--######## ACCORDION -->
+
         </div>
+      </div>
+    </div>
+
+    <!-- CENTRAL COLUMN -->
+
+    <div class="col-md-6">
+      <div class="panel-defautl">
+      <h3>Something about <%= @user.full_name %></h3>
+        <div class="description row-space-3">
+          <p><%= @user.about %></p>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+    <!-- MY ADS -->
+    <div class="col-md-3">
+      <div class="panel-default">
+      <h4>My ads (<%= @advertisements.length %>)</h4><br>
+        <div class="row">
+        <% @advertisements.each do |advertisement| %>
+          <div class="panel panel-default">
+            <div class="panel-heading preview">
+              <%= image_tag advertisement.photos[0].image.url(:medium) if advertisement.photos.length > 0 %>
+            </div>
+            <div class="panel-body">
+              <%= link_to advertisement.listing_name, advertisement %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-
 </div>
 
-
-</div>
-
-
-<div class="col-md-6">
- <div class="panel-defautl">
-
-  <h3>Something about <%= @user.full_name %></h3>
-
-  <div class="description row-space-3">
-
-    <p><%= @user.about %></p>
-
-  </div>
-</div>
-<hr>
-
-
-
-</div>
-<div class="col-md-3 sticky">
-
-  <div class="well text-center">
-
-    <%= image_tag avatar_url(@user), class: "img-circle avatar-large"  %>
-
-
-
-   <div class="panel panel-default">
-
-    <div class="panel-heading">Données de <%= @user.full_name %></div>
-
-    <div class="panel-body">
-
-     <% if current_user != @user %>
-
-     <div class="row-space-2">
-
-         <%= link_to "Send a message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-primary wide" %>
-
-     </div>
-
- <% end %>
-
-   </div>
-
- </div>
-
-</div>
-
-</div>
-</div>
 
 
 
