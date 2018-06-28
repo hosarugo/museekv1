@@ -1,30 +1,38 @@
 <div class="row">
     <div class="col-md-3">
-        <ul class="sidebar-list">
-            <li class="sidebar-item"><%= link_to "My advertisements", advertisements_path, class:"sidebar-link active" %></li>
-            <li class="sidebar-item"><%= link_to "My favorites", root_path, class:"sidebar-link" %></li>
-            <li class="sidebar-item"><%= link_to "My analytics", root_path, class:"sidebar-link" %></li>
+        <ul class="list-group">
+            <li class="list-group-item"><%= link_to "My advertisements", advertisements_path%><span class="badge badge-primary badge-pill">14</span></li>
+            <li class="list-group-item"><%= link_to "My favorites", root_path%><span class="badge badge-primary badge-pill">4</span></li>
+            <li class="list-group-item"><%= link_to "My analytics", root_path, class:"sidebar-link" %><span class="badge badge-primary badge-pill">234</span></li>
         </ul>
     </div>
     <div class="col-md-9">
         <div class="panel panel-default">
             <div class="panel-heading"> My advertisements</div>
-            <div class="panel-body">
+              <div class="panel-body">
                 <% @advertisements.each do |advertisement| %>
                 <div class="row">
                     <div class="col-md-2">
                         <%= image_tag advertisement.photos[0].image.url(:thumb) if advertisement.photos.length > 0 %>
                     </div>
                     <div class="col-md-7">
-                        <h4><%= advertisement.listing_name %></h4>
+                        <h2><%= advertisement.listing_name %></h2>
+                        <h5><%= advertisement.main_category%>/<%= advertisement.category %></h5>
+
                     </div>
                     <div class="col-md-3 right">
+                      <div class="text-center">
                         <%= link_to "Update", edit_advertisement_path(advertisement), class:"btn btn-primary" %>
+                        <%= link_to "Show", advertisement_path(advertisement), class:"btn btn-primary" %>
+                        <br>
+                        <strong>Create the <%= advertisement.created_at.strftime("%d.%m.%y") %></strong>
                     </div>
                 </div>
                 <hr>
                 <% end %>
             </div>
-        </div>
+          </div>
     </div>
 </div>
+</div>
+

@@ -63,6 +63,16 @@ GEM
       activerecord (>= 5.0)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    ahoy_matey (2.1.0)
+      addressable
+      browser (~> 2.0)
+      device_detector
+      geocoder (>= 1.4.5)
+      railties (>= 4.2)
+      referer-parser (>= 0.3)
+      request_store
+      safely_block (>= 0.2.1)
+      user_agent_parser
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (8.0.0)
@@ -84,6 +94,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    browser (2.5.3)
     builder (3.2.3)
     byebug (10.0.2)
     climate_control (0.2.0)
@@ -101,6 +112,7 @@ GEM
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     debug_inspector (0.0.3)
+    device_detector (1.0.1)
     devise (4.4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -111,6 +123,7 @@ GEM
       devise (>= 4.4)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
+    errbase (0.1.0)
     erubi (1.7.1)
     execjs (2.7.0)
     faker (1.8.7)
@@ -258,6 +271,9 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (4.0.1)
+    referer-parser (0.3.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -266,6 +282,8 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     ruby_dep (1.5.0)
+    safely_block (0.2.1)
+      errbase
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -316,6 +334,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
+    user_agent_parser (2.4.1)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.6.2)
@@ -338,6 +357,7 @@ DEPENDENCIES
   active_admin_theme
   activeadmin
   acts_as_favoritor
+  ahoy_matey
   attachinary!
   autoprefixer-rails
   better_errors

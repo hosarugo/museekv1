@@ -32,6 +32,7 @@ gem 'ransack'
 gem 'rails-timeago'
 gem 'gmaps-autocomplete-rails'
 gem 'acts_as_favoritor'
+gem 'ahoy_matey'
 
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
