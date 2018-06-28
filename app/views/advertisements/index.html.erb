@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-md-3">
         <ul class="list-group">
-            <li class="list-group-item"><%= link_to "My advertisements", advertisements_path%><span class="badge badge-primary badge-pill">14</span></li>
-            <li class="list-group-item"><%= link_to "My favorites", root_path%><span class="badge badge-primary badge-pill">4</span></li>
+            <li class="list-group-item"><%= link_to "My advertisements", advertisements_path%><span class="badge badge-primary badge-pill"><%=current_user.advertisements.count%></span></li>
+            <li class="list-group-item"><%= link_to "My favorites", root_path%><span class="badge badge-primary badge-pill">2</span></li>
             <li class="list-group-item"><%= link_to "My analytics", root_path, class:"sidebar-link" %><span class="badge badge-primary badge-pill">234</span></li>
         </ul>
     </div>
@@ -18,7 +18,7 @@
                     <div class="col-md-7">
                         <h2><%= advertisement.listing_name %></h2>
                         <h5><%= advertisement.main_category%>/<%= advertisement.category %></h5>
-
+                        <h4><%= advertisement.price %> euros</h4>
                     </div>
                     <div class="col-md-3 right">
                       <div class="text-center">
@@ -28,9 +28,11 @@
                         <strong>Create the <%= advertisement.created_at.strftime("%d.%m.%y") %></strong>
                     </div>
                 </div>
-                <hr>
-                <% end %>
+
             </div>
+            <hr>
+
+            <% end %>
           </div>
     </div>
 </div>

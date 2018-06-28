@@ -17,22 +17,38 @@
          <i class="fas fa-bullhorn" s></i><span class="nim"> CREATE AN AD</span>
          <% end %>
        </li>
-
+       <li>
         <li>
           <%= link_to conversations_path do %>Messages<% end %>
+        </li>
+
+        <span class="badge badge-primary badge-pill">
+            <%=Conversation.involving(current_user).count%>
+            </span>
         </li>
 
        <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
         aria-haspopup="true" aria-expanded="false"> <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %> <%= current_user.full_name %>
         <span class="caret"></span></a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu flex">
+          <li>
+            <div  class="inline">
+            <%= link_to "Messages", conversations_path  %>
+            <span class="badge badge-primary badge-pill">
+              <%=Conversation.involving(current_user).count%>
+            </span>
+            </div>
+          </li>
           <li><%= link_to "My ads", advertisements_path %></li>
           <li><%= link_to 'My profil', user_path(current_user.id) %></li>
+          <li><%= link_to 'Create new ad', new_advertisement_path %></li>
           <li><%= link_to 'Edit my profil', edit_user_registration_path %></li>
           <li role="separator" class="divider"></li>
+          <li><%= link_to 'Params', edit_user_registration_path %></li>
           <li><%= link_to 'Log out', destroy_user_session_path,
           method: :delete %></li>
+
         </ul>
       </li>
       <% end %>

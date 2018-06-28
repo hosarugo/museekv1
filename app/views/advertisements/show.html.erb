@@ -128,7 +128,7 @@
         <!-- Advertisements nearby-->
         <h3>Advertisements around you</h3>
         <div class="row">
-            <% for advertisement in @advertisement.nearbys(10).limit(2) %>
+            <% for advertisement in @advertisement.nearbys(50).limit(3) %>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading preview">
