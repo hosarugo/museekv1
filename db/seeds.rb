@@ -95,6 +95,48 @@ user =  User.create({
 # user.avatar_url = "https://scontent.flis5-1.fna.fbcdn.net/v/t31.0-8/20626573_10155773499743109_2156786739631634358_o.jpg?oh=4b1096754adf1a110a54e2a30feaa41d&oe=5A9C5189"
 user.save
 
+user =  User.create({
+    email: "pedro@gmail.com",
+    password: "password",
+    full_name: "Pedro Chuva",
+    first_name: "Gonçalo",
+    last_name: "Costa",
+    about: "I am a musician and i love to play with people!",
+    instrument1: "Guitar",
+    instrument2: "Guitar",
+    instrument3: "Guitar",
+    instrument4: "Guitar",
+    instrument5: "Guitar",
+    style1: "Rock",
+    style2: "Rock",
+    style3: "Rock",
+    address: "Route de Lausanne 2, 1096 Cully"
+
+    })
+
+user =  User.create({
+    email: "diogo@gmail.com",
+    password: "password",
+    full_name: "Diogo Lopes",
+    first_name: "Gonçalo",
+    last_name: "Costa",
+    about: "I am a musician and i love to play with people!",
+    instrument1: "Guitar",
+    instrument2: "Guitar",
+    instrument3: "Guitar",
+    instrument4: "Guitar",
+    instrument5: "Guitar",
+    style1: "Rock",
+    style2: "Rock",
+    style3: "Rock",
+    address: "Route de Lausanne 2, 1096 Cully"
+
+    })
+# user.avatar_url = "https://scontent.flis5-1.fna.fbcdn.net/v/t31.0-8/20626573_10155773499743109_2156786739631634358_o.jpg?oh=4b1096754adf1a110a54e2a30feaa41d&oe=5A9C5189"
+user.save
+# user.avatar_url = "https://scontent.flis5-1.fna.fbcdn.net/v/t31.0-8/20626573_10155773499743109_2156786739631634358_o.jpg?oh=4b1096754adf1a110a54e2a30feaa41d&oe=5A9C5189"
+user.save
+
 
 message = Message.create({
   content: "labalbalbalablablabalbalablab",

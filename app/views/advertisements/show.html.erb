@@ -1,6 +1,18 @@
 <div class="container">
   <div class="wrap">
 
+  <nav aria-label="breadcrumb">
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb"><%= link_to 'Back', 'javascript:history.back()', class:"btn btn-primary" %></li>
+    <li class="breadcrumb-item"><a href="#"><%= @advertisement.main_category %></a></li>
+    <li class="breadcrumb-item"><a href="#"><%= @advertisement.category %>
+</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @advertisement.title %></li>
+  </ol>
+</nav>
+
+
    <!-- Carousel -->
    <div class="row">
     <div class="col-md-6 ">
@@ -145,4 +157,7 @@
 
 </div>
 </div>
+</div>
+</div>
+
 

@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     before_action :set_conversation
 
     def show
-        @messages =
+        @messages = @conversations.messages.all
     end
 
     def index
